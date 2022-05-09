@@ -1,0 +1,18 @@
+<!-- <h2>HTML</h2>
+<p>HTML is the standard markup language for describing the structure of the web pages. Our HTML tutorials will help you to understand the basics of latest HTML5 language, so that you can create your own website.</p>
+<p><a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p> -->
+<div class="container">
+  <div class="image-info">
+    <img [src]="product?.image" />
+    <span>{{ product.name }}</span>
+  </div>
+  <hr>
+  <div class="price-info">
+    <span class="retail-price">${{ product.price }}</span>
+    <span class="rpp-price">${{ product.rrp - product.price }} off RRP of ${{ product.rrp  }}</span>
+  </div>
+  <div class="action-items">
+    <button class="btn-primary pri-btn" (click)="addToCart()">Add to Cart</button>
+    <button class="sec-btn" [disabled]="true">Compare</button>
+  </div>
+</div>

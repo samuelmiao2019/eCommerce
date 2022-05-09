@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Product detail</h4>
+  <span>Successfully add to shopping cart!</span>
+  <button type="button" class="closev " aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="container">
+    <div class="basic-info">
+      <img [src]="product?.image" />
+    </div>
+    <div class="basic-info">
+      <label>name:</label> 
+      <span>{{ product.name }}</span>
+    </div>
+    <div class="basic-info">
+      <label>price:</label>
+      <span>${{ product.price }}</span>
+    </div>
+    <div class="basic-info">
+      <label>recommend retail price:</label>
+      <span class="retail-price">${{ product.rrp }}</span>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-outline-dark" 
+    (click)="activeModal.close()">
+    Close
+   </button>
+</div>

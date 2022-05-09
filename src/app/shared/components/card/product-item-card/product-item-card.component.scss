@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.image-info {
+  margin: 20px 0px 40px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    margin-bottom: 20px;
+    max-width: 300px;
+    max-height: 300px;
+    text-align: center;
+  }
+}
+
+.price-info {
+  margin: 10px 0px;
+
+  .retail-price {
+    color: green;
+    font-weight: bold;
+    text-align: left;
+    font-size: large;
+  }
+
+  .rpp-price {
+    color: red;
+    text-align: right;
+    font-size: small;
+    float: right;
+  }
+}
+
+.action-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .pri-btn {
+    width: 60%;
+    background-color: green;
+    border-color: green;
+    border-radius: 15px;
+  }
+
+  .sec-btn {
+    width: 40%;
+  }
+}

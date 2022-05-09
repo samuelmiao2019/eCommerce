@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row g-3">
+      <div *ngFor="let product of products$ | async" 
+        class="col-md-6 col-lg-4 col-xl-3"
+        (click)="openProductDetailModal(product)">
+        <wg-product-item-card 
+          [product]="product">
+        </wg-product-item-card>
+      </div>
+  </div>
+</div>
