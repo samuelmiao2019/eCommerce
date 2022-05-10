@@ -4,12 +4,12 @@ import { Observable } from 'rxjs';
 import { ShoppingCartService } from './shopping-cart/service/shopping-cart.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'wg-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  
+
   public selectedProductNumber$: Observable<number>;
   public title = 'eCommerce';
 
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.selectedProductNumber$ = this.shoppingCartService.getSelectedProductsNumber();
+    this.selectedProductNumber$ = this.shoppingCartService.getSelectedProductsNumber$();
   }
 
   public navigateToShoppingCart(): void {

@@ -1,6 +1,10 @@
-import { createSelector } from "@ngrx/store";
-import { ShoppingCartState } from "./shopping-cart.state.model";
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { ShoppingCartState, SHOPPING_CART_FEATURE_STATE_KEY } from './shopping-cart.state.model';
 
-export const selectAllProducts = (state: ShoppingCartState) => state.products;
+const getShoppingCartState = createFeatureSelector<ShoppingCartState>(SHOPPING_CART_FEATURE_STATE_KEY);
 
-export const getCount = createSelector(selectAllProducts, (allProducts) => (allProducts || []).length);
+export const selectAllProducts = createSelector(getShoppingCartState, state => {
+  return state?.products || [];
+});
+
+export const getCount = createSelector(selectAllProducts, allProducts => allProducts.length);

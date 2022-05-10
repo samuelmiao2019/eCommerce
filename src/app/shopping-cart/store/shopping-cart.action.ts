@@ -1,5 +1,5 @@
-import { Action } from "@ngrx/store";
-import { Product } from "src/app/shared/models/product.model";
+import { Action } from '@ngrx/store';
+import { Product } from 'src/app/shared/models/product.model';
 
 export enum ShoppingCartActionType {
   ADD_ITEM = '[shoppingCart][add]',

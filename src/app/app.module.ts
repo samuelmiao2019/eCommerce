@@ -7,19 +7,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShoppingCartService } from './shopping-cart/service/shopping-cart.service';
 import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
+import { shoppingCartReducer } from './shopping-cart/store/shopping-cart.reducer';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     NgbModule,
-    StoreModule.forRoot({}),
     ShoppingCartModule,
+    StoreModule.forRoot(shoppingCartReducer),
   ],
   providers: [ShoppingCartService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

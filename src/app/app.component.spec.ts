@@ -1,15 +1,27 @@
 import { TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { ShoppingCartService } from './shopping-cart/service/shopping-cart.service';
 
-describe('AppComponent', () => {
+describe(AppComponent.name, () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+      ],
+      providers: [
+        {
+          provide: ShoppingCartService,
+          useValue: jasmine.createSpyObj<ShoppingCartService>(['getSelectedProductsNumber$']),
+        },
+        {
+          provide: Router,
+          useValue: jasmine.createSpyObj<Router>(['navigate']),
+        },
       ],
     }).compileComponents();
   });
@@ -24,12 +36,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('eCommerce');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('eCommerce app is running!');
   });
 });

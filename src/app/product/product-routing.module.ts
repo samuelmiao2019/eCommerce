@@ -12,18 +12,19 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-  path: '',
-  component: ProductComponent,
-  children: [
-    {
-      path: PRODUCT_LIST,
-      component: ProductListComponent, 
-    }
-  ],
-}];
+    path: '',
+    component: ProductComponent,
+    children: [
+      {
+        path: PRODUCT_LIST,
+        component: ProductListComponent,
+      },
+    ],
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class ProductRoutingModule { }

@@ -27,6 +27,6 @@ const COMPONENTS: any[] = [
   ],
   exports: [
     ...COMPONENTS,
-  ]
+  ],
 })
 export class ProductModule {}
